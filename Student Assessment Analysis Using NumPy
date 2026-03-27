@@ -1,0 +1,33 @@
+import numpy as np
+
+# Marks matrix (Rows: Students, Columns: Subjects)
+marks = np.array([
+    [75, 80, 85],   # Student 1
+    [70, 78, 82],   # Student 2
+    [88, 90, 92]    # Student 3
+])
+
+print("Original Marks Matrix:")
+print(marks)
+
+# Step 1: Apply bonus (double marks for Subject 2 → index 1)
+marks[:, 1] = marks[:, 1] * 2
+
+print("\nAfter Applying Bonus (Subject 2):")
+print(marks)
+
+# Step 2: Convert to single row
+single_row = marks.flatten()
+
+print("\nSingle Row Format:")
+print(single_row)
+
+# Step 3: Total marks per student
+total_marks = marks.sum(axis=1)
+
+print("\nTotal Marks per Student:")
+print(total_marks)
+
+# Step 4: Overall total
+print("\nOverall Total Marks:")
+print(marks.sum())
