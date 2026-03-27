@@ -1,0 +1,24 @@
+import numpy as np
+
+# Sales matrix (Rows: Days, Columns: Products)
+# Example: 3 days, 3 products
+sales = np.array([
+    [100, 150, 200],   # Day 1
+    [120, 180, 220],   # Day 2 (Festival Day)
+    [90, 140, 170]     # Day 3
+])
+
+print("Original Sales Matrix:")
+print(sales)
+
+# Step 1: Double the sales of festival day (Day 2 → index 1)
+sales[1] = sales[1] * 2
+
+print("\nAfter Doubling Festival Day Sales:")
+print(sales)
+
+# Step 2: Convert matrix into single row (flatten)
+single_row = sales.flatten()
+
+print("\nSales Data in Single Row:")
+print(single_row)
