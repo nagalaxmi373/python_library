@@ -1,0 +1,27 @@
+import pandas as pd
+
+# Load dataset
+data = pd.read_csv('covid_district_data.csv')
+
+# View first and last records
+print("First 5 Records:")
+print(data.head())
+
+print("\nLast 5 Records:")
+print(data.tail())
+
+# Dataset structure
+print("\nDataset Info:")
+print(data.info())
+
+# Summary statistics
+print("\nSummary Statistics:")
+print(data.describe())
+
+# Missing values
+print("\nMissing Values:")
+print(data.isnull().sum())
+
+# Column names
+print("\nColumns:")
+print(data.columns)
