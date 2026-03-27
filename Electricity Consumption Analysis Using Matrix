@@ -1,0 +1,27 @@
+import numpy as np
+
+# Electricity consumption matrix (units)
+# Rows: Houses, Columns: Months
+consumption = np.array([
+    [200, 250, 300],   # House 1
+    [180, 230, 280],   # House 2
+    [220, 260, 310]    # House 3
+])
+
+print("Original Consumption Matrix:")
+print(consumption)
+
+# Assume subsidy is applied in Month 2 (index 1)
+# Double subsidy → reduce bill impact (example: multiply by 0.5)
+consumption[:, 1] = consumption[:, 1] * 0.5
+
+print("\nAfter Applying Double Subsidy (Month 2):")
+print(consumption)
+
+# Total consumption per house
+print("\nTotal Consumption per House:")
+print(consumption.sum(axis=1))
+
+# Total consumption per month
+print("\nTotal Consumption per Month:")
+print(consumption.sum(axis=0))
