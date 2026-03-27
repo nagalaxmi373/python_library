@@ -1,0 +1,37 @@
+import pandas as pd
+
+# Load temperature dataset
+# Example file: temperature_data.csv
+data = pd.read_csv('temperature_data.csv')
+
+# Display first 5 records
+print("First 5 Records:")
+print(data.head())
+
+# Basic statistics
+print("\nSummary Statistics:")
+print(data['Temperature'].describe())
+
+# Calculate variance and standard deviation
+variance = data['Temperature'].var()
+std_dev = data['Temperature'].std()
+
+print("\nVariance:", variance)
+print("Standard Deviation:", std_dev)
+
+# Find minimum and maximum temperature
+print("\nMinimum Temperature:", data['Temperature'].min())
+print("Maximum Temperature:", data['Temperature'].max())
+
+# Check for unusual temperature (outliers)
+mean = data['Temperature'].mean()
+
+# Define threshold (mean ± 2*std)
+upper_limit = mean + 2 * std_dev
+lower_limit = mean - 2 * std_dev
+
+outliers = data[(data['Temperature'] > upper_limit) | 
+                (data['Temperature'] < lower_limit)]
+
+print("\nUnusual Temperature Records:")
+print(outliers)
